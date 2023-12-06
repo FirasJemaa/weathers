@@ -24,6 +24,8 @@ function App() {
         const weatherResponse = await response[0].json();
         const forcastResponse = await response[1].json();
 
+        document.querySelector("body").style.backgroundImage = `url(./images/${currentWeather.weather[0].icon}.jpeg)`
+
         setCurrentWeather({ city: searchData.label, ...weatherResponse });
         setForecast({ city: searchData.label, ...forcastResponse });
       })
